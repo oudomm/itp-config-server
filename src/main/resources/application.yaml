@@ -1,0 +1,20 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: configserver
+  profiles:
+    active: git
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${GH_URL}
+          username: ${GH_USER}
+          password: ${GH_TOKEN}
+          default-label: main
+          search-paths: "/**"
+        native:
+          search-locations:
+            - file:/Users/oudom/Documents/ITP/itp-microservices/itp-config-repo/
+            - file:/Users/oudom/Documents/ITP/itp-microservices/itp-config-repo/{application}/
