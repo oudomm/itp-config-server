@@ -4,7 +4,7 @@ spring:
   application:
     name: configserver
   profiles:
-    active: git, vault
+    active: git,vault
   cloud:
     config:
       server:
@@ -16,7 +16,7 @@ spring:
           token: myroot
           kv-version: 2
           backend: secret
-          profile-separator: '/'
+          profile-separator: /
         git:
           uri: ${GH_URL}
           username: ${GH_USER}
